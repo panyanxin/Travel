@@ -1,11 +1,11 @@
 <template>
     <div class='wrap'>
-        <swiper :options="swiperOption">
+        <swiper :options="swiperOption" v-if='showSwiper'>
             <!-- slides -->
-            <swiper-slide v-for="item of swiperList" :key='item.id'>
+            <swiper-slide v-for="item of list" :key='item.id'>
                 <img
                     class="swiper-img"
-                    :src="item.imgSrc"
+                    :src="item.imgUrl"
                 >
             </swiper-slide>
             <div class="swiper-pagination"  slot="pagination"></div>
@@ -15,23 +15,25 @@
 <script>
 export default {
   name: "HomeSwiper",
+
   data() {
     return {
       swiperOption: {
           pagination:'.swiper-pagination',
           loop:true
-      },
-      swiperList:[{
-          id:'0001',
-          imgSrc:'http://img1.qunarzz.com/piao/fusion/1801/1a/94428c6dea109402.jpg_640x200_2cf590d8.jpg'
-      },{
-          id:'0002',
-          imgSrc:'http://img1.qunarzz.com/piao/fusion/1802/42/7c92b9a381e46402.jpg_640x200_1cdce2a4.jpg'
       }
-      ]
-    };
+    }
+  },
+    props:{
+      list:Array
+  },
+  computed:{
+      showSwiper(){
+          return this.list.length
+      }
   }
-};
+ 
+}
 </script>
 <style lang="stylus" scoped>
     .wrap >>>  .swiper-pagination-bullet-active 
