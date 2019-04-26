@@ -36,8 +36,6 @@ export default {
         background: #fff;
         border-radius .1rem
         color #ccc
-    
-
     .header-right 
         width: 1.24rem;
         float: right;
