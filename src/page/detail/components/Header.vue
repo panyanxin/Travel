@@ -44,10 +44,10 @@ export default {
       }
     }
   },
-  mounted () {
+  activated() {
     window.addEventListener('scroll', this.handleScroll)
   },
-  unmounted () {
+  deactivated () {
     window.removeEventListener('scroll', this.handleScroll)
   }
 }
