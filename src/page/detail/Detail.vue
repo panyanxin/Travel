@@ -24,7 +24,6 @@ export default {
       bannerImg: '',
       gallaryImgs: [],
       list: []
-
     };
   },
   components: {
