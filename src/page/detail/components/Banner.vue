@@ -10,15 +10,18 @@
                 </div>
             </div>
         </div>
-        <common-gallary 
-        :imgs='gallaryImgs' 
-        v-show='showGallary'
-        @close='handlegallaryClose'
-        ></common-gallary>
+        <fade>
+             <common-gallary 
+                :imgs='gallaryImgs' 
+                v-show='showGallary'
+                @close='handlegallaryClose'
+            ></common-gallary>
+        </fade>
     </div>
 </template>
 <script>
 import CommonGallary from 'common/gallary/Gallary'
+import Fade from 'common/fade/Fade'
 export default {
     data(){
         return{
@@ -32,7 +35,8 @@ export default {
         gallaryImgs:Array
     },
     components: {
-        CommonGallary
+        CommonGallary,
+        Fade
     },
     methods: {
         handleBannerClick(){
@@ -50,7 +54,6 @@ export default {
     overflow hidden
     height 0
     padding-bottom 55%
-    background blue
     .banner-img
         width 100%
     .banner-info
